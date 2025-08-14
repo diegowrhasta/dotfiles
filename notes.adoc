@@ -1,0 +1,51 @@
+Since we are using zshrc we add aliases and stuff alike at
+
+~/.zshrc
+
+- After adding something like:
+
+```
+alias myscript="~/yourscript.sh"
+```
+
+You can save the file, and source it `source ~/.zshrc`
+
+- You also need to install `pacman-contrib`
+
+```
+yay -S pacman-contrib
+```
+
+In there the `paccache` program lives, and that's what we use to clear the pacman cache
+
+- yay and some packages might require `package-config` you can install it easily though:
+
+```
+yay -S pkgconfig
+yay -S pkgconf
+```
+
+I installed the first one and it allowed me to install it
+
+- Also install m4
+
+```
+yay -S m4
+```
+
+When writing bash scripts
+
+If you are aliasing something that needs to have variables passed onto it,
+specially a bash script you can do something like:
+
+````
+test --upgrade
+````
+
+The alias can be declared as a function in `zshrc`:
+
+````
+test() {
+	"./../../script.sh" "$@"
+}
+````
