@@ -45,7 +45,6 @@ esac
 
 alias hx="helix"
 alias waifu={WAIFU}
-alias kittyup="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
 alias lasf="ls -laF"
 alias prx={PRX}
 alias lesgow={LESGOW}
