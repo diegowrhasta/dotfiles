@@ -1,0 +1,13 @@
+# Introduction
+
+Zathura is a lightweight pdf visualizer. It has vim-like motions so it's pretty
+convenient.
+
+## Notes
+
+- t = This allows to switch from dark to light mode. It's actually a re-color from
+its stock type of behavior and a back and forth.
+- z + i = Zoom in
+- z + o = Zoom out
+- Zathura needs a backend (plugin), so be sure to install it before trying to
+open files: `yay -S zathura-pdf-mupdf`
