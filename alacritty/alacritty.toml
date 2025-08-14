@@ -1,0 +1,23 @@
+[terminal]
+shell = { program = "/usr/bin/tmux", args = ["new-session", "-A", "-s", "main"] }
+
+[window]
+opacity = 0.8
+
+[keyboard]
+bindings = [
+  # New "tab"
+  { key = "T", mods = "Control|Shift", command = { program = "/usr/bin/tmux", args = ["new-window"] } },
+
+  # Navigate tabs
+  { key = "Left", mods = "Control|Shift", command = { program = "/usr/bin/tmux", args = ["previous-window"] } },
+  { key = "Right", mods = "Control|Shift", command = { program = "/usr/bin/tmux", args = ["next-window"] } },
+
+  # Jump to tab N
+  { key = "Key1", mods = "Control|Alt", command = { program = "/usr/bin/tmux", args = ["select-window", "-t", "0"] } },
+  { key = "Key2", mods = "Control|Alt", command = { program = "/usr/bin/tmux", args = ["select-window", "-t", "1"] } },
+  { key = "Key3", mods = "Control|Alt", command = { program = "/usr/bin/tmux", args = ["select-window", "-t", "2"] } },
+  { key = "Key4", mods = "Control|Alt", command = { program = "/usr/bin/tmux", args = ["select-window", "-t", "3"] } },
+  # ... add 3–9 if you want more
+]
+
