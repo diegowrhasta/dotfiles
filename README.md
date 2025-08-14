@@ -51,3 +51,12 @@ file. This is so that this then gets passed down at runtime to replace placehold
 in `.zshrc`.
 
 _Note:_ Of course this means that `.vars` is by default ignored by git (.gitignore).
+
+### Alacritty
+
+The configuration file goes in `~/.config/alacritty/alacritty.toml`. **Create the whole
+path if it's not there.**
+
+### Tmux
+
+The configuration file goes in `~/.tmux.conf`.
