@@ -37,6 +37,7 @@ the commands we ran, and overall setups we make.
 - [fastfetch](https://itsfoss.com/install-yay-arch-linux/)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 - [zathura](https://archlinux.org/packages/extra/x86_64/zathura/)
+- [nerd-fonts](https://archlinux.org/groups/any/nerd-fonts/)
 
 ### Zsh
 
