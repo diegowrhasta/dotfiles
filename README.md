@@ -36,6 +36,7 @@ the commands we ran, and overall setups we make.
 - [rvm](https://rvm.io/rvm/install)
 - [fastfetch](https://itsfoss.com/install-yay-arch-linux/)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
+- [zathura](https://archlinux.org/packages/extra/x86_64/zathura/)
 
 ### Zsh
 

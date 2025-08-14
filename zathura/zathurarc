@@ -1,0 +1,18 @@
+# Background color (light yellow)
+set default-bg "#FDF6D8"
+
+# Text color (dark brown, mimicking print)
+set default-fg "#5C4033"
+
+# Selection color (slightly darker yellow for contrast)
+set selection-bg "#F5E1A4"
+set selection-fg "#000000"
+
+# Link highlighting color (darker gold)
+set highlight-color "#E6B800"
+
+# Adjust recolor mode (if needed)
+set recolor-lightcolor "#FDF6D8"
+set recolor-darkcolor "#5C4033"
+set recolor "true"
+
