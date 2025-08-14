@@ -23,3 +23,29 @@ you messed everything up.
 And not just that, this allows for one to **document everything** he has done to his
 workstation, since we tend to forget as time goes on as to the things we installed,
 the commands we ran, and overall setups we make.
+
+### Requirements
+
+- [yay](https://itsfoss.com/install-yay-arch-linux/)
+- [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+- [deno](https://docs.deno.com/runtime/getting_started/installation/)
+- [pnpm](https://pnpm.io/installation)
+- [bun](https://bun.com/docs/installation)
+- [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+- [go](https://go.dev/doc/install)
+- [rvm](https://rvm.io/rvm/install)
+- [fastfetch](https://itsfoss.com/install-yay-arch-linux/)
+- [tmux](https://github.com/tmux/tmux/wiki/Installing)
+
+### Zsh
+
+Setup is a combination of Alacritty with tmux and all running with zsh. Enhanced
+auto-completion and experience overall.
+
+Due to _security concerns_ the way that the `.zsh` file has been versioned here,
+(and this is with future automation in mind), there's a `.vars.example` file that
+has a brief rundown of the shape of how specific values should be put in a `.vars`
+file. This is so that this then gets passed down at runtime to replace placeholders
+in `.zshrc`.
+
+_Note:_ Of course this means that `.vars` is by default ignored by git (.gitignore).
