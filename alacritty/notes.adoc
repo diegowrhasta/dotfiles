@@ -28,3 +28,65 @@ path to your path. This can easily be done by adding the path in `.zshrc`:
 ```
 export PATH="$PATH:$HOME/.cargo/bin"
 ```
+
+## Troubleshooting
+
+**NOTE**: Under the assumption this was installed with cargo. In order to Gnome
+to pick up on the icon correctly we have to do a bit of extra work.
+
+### GNOME and desktop entries
+
+A command to manually refresh the desktop entry database is `update-desktop-database`.
+E.g:
+
+```
+sudo update-desktop-database /usr/share/applications
+```
+
+If an icon is at `/usr/share/pixmaps`, GNOME _should_ read it without cache. But
+in any case you can move it to some other place and at the same time be in need
+of refreshing the icon cache:
+
+```
+# sudo gtk-update-icon-cache /usr/share/icons/hicolor
+```
+
+In case you want to double check if the `.desktop` file is actually "compilable"
+you can run:
+
+```
+desktop-file-validate /usr/share/applications/Alacritty.desktop
+```
+
+And to see if the app is actually visible for GNOME, you can run something like:
+
+```
+grep -r "Alacritty" /usr/share/applications ~/.local/share/applications
+```
+
+And even run a `gtk-launch alacritty` if the app boots up correctly, then restarting
+the system should be the final thing.
+
+#### Symlinks
+
+By doing everything we did up until now, the desktop icon might not show up, and
+this is because (if we installed alacritty with cargo) GNOME doesn't see the
+executable that's at `~/.cargo/bin/`. GNOME only tries to scan binaries that are
+at:
+
+- `/usr/bin`
+- `/usr/local/bin`
+
+But we can hack this convention by creating a `symlink`. This is basically a _dummy_
+file, that when hit, it should reference to an actual file/executable somewhere else,
+so in our case, we can easily symlink alacritty such as:
+
+```
+sudo ln -s ~/.cargo/bin/alacritty /usr/local/bin/alacritty
+```
+
+And a bit of theory for that: `/usr/local/bin` is by convention meant for locally
+installed software (not managed by the package manager).
+
+_Extra:_ In case you want to easily check if a package is being managed by yay/pacman
+you can run something like `yay -Ql alacritty`.
