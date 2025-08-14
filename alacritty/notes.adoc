@@ -1,0 +1,30 @@
+# Introduction
+
+Some help in regards to setting up Alacritty correctly.
+
+## Setting up icon and desktop entry (GNOME)
+
+Since the setup is aimed at Manjaro-GNOME. This will be focused on the conventions
+of said setup to get a working icon for Alacritty.
+
+First of all. Desktop entries can be sourced from
+
+```
+/usr/share/applications/
+```
+
+It's in there that you should put the `Alacritty.desktop` entry so that it can
+then be searched for, and also added to the _Dock Bar_.
+
+After that, so that the icon gets resolved correctly, you can put it in `/usr/share/pixmaps/`.
+So copy the `.svg` file that's in the folder these notes are in. After that you
+should have the entry available to use and to execute alacritty.
+
+## Extra (if cargo installed Alacritty)
+
+To have the terminal access the alacritty executable, you have to add the bin
+path to your path. This can easily be done by adding the path in `.zshrc`:
+
+```
+export PATH="$PATH:$HOME/.cargo/bin"
+```
