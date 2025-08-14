@@ -60,3 +60,8 @@ path if it's not there.**
 ### Tmux
 
 The configuration file goes in `~/.tmux.conf`.
+
+## Extra Links
+
+For a rundown of what the configurations do, and the reason as to some of them,
+you can check-out my [linux-corner](https://linux-corner.dsbalderrama.top/).
