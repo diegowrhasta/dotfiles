@@ -61,6 +61,12 @@ path if it's not there.**
 
 The configuration file goes in `~/.tmux.conf`.
 
+### VSCode
+
+A bit trickier, but this is kept here to simply copy the contents and paste them
+into the VSCode (or its cooler VSCodium cousing), when opening up the user settings,
+with this the necessary settings should be applied.
+
 ## Extra Links
 
 For a rundown of what the configurations do, and the reason as to some of them,
