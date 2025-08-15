@@ -7,7 +7,7 @@ opacity = 0.8
 [keyboard]
 bindings = [
   # New "tab"
-  { key = "T", mods = "Control|Shift", command = { program = "/usr/bin/tmux", args = ["new-window"] } },
+  { key = "T", mods = "Control|Shift", chars = "\u0002\u0014" },
 
   # Navigate tabs
   { key = "Left", mods = "Control|Shift", command = { program = "/usr/bin/tmux", args = ["previous-window"] } },
