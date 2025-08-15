@@ -7,6 +7,7 @@ convenient.
 
 - t = This allows to switch from dark to light mode. It's actually a re-color from
 its stock type of behavior and a back and forth.
+- F11 = Full screen
 - z + i = Zoom in
 - z + o = Zoom out
 - Zathura needs a backend (plugin), so be sure to install it before trying to
