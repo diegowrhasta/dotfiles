@@ -65,6 +65,8 @@ if $DO_UPGRADE; then
   announce "System upgrade ($AUR)"
   $AUR -Syu --ask 4   # interactive for .pacnew merges
   echo "Run 'sudo pacdiff' after the script to merge new config files."
+  announce "NVM upgrade"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
 
 # ---------- 2. Pacman cache trim ------------------------------------------
