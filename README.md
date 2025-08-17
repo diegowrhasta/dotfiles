@@ -9,7 +9,7 @@ places and get an environment up and running in no time_
 
 ## Dotfiles
 
-As a broad definition, _Dotfiles_ are the slang term used in the** GNU/Linux sphere**
+As a broad definition, _Dotfiles_ are the slang term used in the **GNU/Linux sphere**
 to refer to **config files** (most of the time) that help shape up **tools behaviors**
 and extend with other functionalities as well. In short, every setup has the
 capability of **personalizing its experience** to the user's needs (_this is why Linux
