@@ -43,7 +43,6 @@ esac
 
 # Aliases
 
-alias hx="helix"
 alias waifu={WAIFU}
 alias lasf="ls -laF"
 alias prx={PRX}

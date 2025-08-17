@@ -67,6 +67,27 @@ A bit trickier, but this is kept here to simply copy the contents and paste them
 into the VSCode (or its cooler VSCodium cousing), when opening up the user settings,
 with this the necessary settings should be applied.
 
+### Wrapper scripts
+
+If you want aliased commands to survive `sudo`, instead of putting them as simple
+`alias` in `~/.zshrc`. You can add them to a path such as `/usr/local/bin`.
+
+Example:
+
+```
+sudo nvim /usr/local/bin
+
+#!/bin/sh
+exec helix "$@"
+
+sudo chmod +x /usr/local/bin/hx
+```
+
+This way you can run the command both as a normal user and as root. This is
+a clean approach instead of dealing with aliases on a `~/.zshrc` file. And you
+won't run into issues when trying to run `sudo` on the alias and the command
+failing since it's not available to said user.
+
 ## Extra Links
 
 For a rundown of what the configurations do, and the reason as to some of them,
