@@ -1,0 +1,9 @@
+# Remaps
+
+[keys.insert]
+"C-c" = "normal_mode"
+
+# Visual
+
+[editor]
+rulers = [80, 144]
