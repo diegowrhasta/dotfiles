@@ -1,6 +1,10 @@
 game:
   exe: /home/diego-b/Documents/windows games/tsuma-wo-ai-suru/tsuma-wo-ai-suru/SETUP/hitodumanetori.exe
 system:
+  gamescope: false
+  gamescope_flags: --backend sdl
+  gamescope_game_res: 800x600
+  gamescope_window_mode: ''
   locale: ja_JP.utf8
 wine:
   system_winetricks: true
