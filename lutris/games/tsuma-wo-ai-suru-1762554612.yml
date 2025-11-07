@@ -1,0 +1,7 @@
+game:
+  exe: /home/diego-b/Documents/windows games/tsuma-wo-ai-suru/tsuma-wo-ai-suru/SETUP/hitodumanetori.exe
+system:
+  locale: ja_JP.utf8
+wine:
+  system_winetricks: true
+  version: system

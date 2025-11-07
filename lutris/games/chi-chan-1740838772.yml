@@ -1,0 +1,15 @@
+game:
+  args: ''
+  exe: /home/diego-b/Documents/windows games/chi-chan/chi-chan/chi-chan.exe
+  prefix: ''
+system:
+  env: {}
+  locale: ja_JP.utf8
+wine:
+  battleye: true
+  dgvoodoo2: true
+  dxvk: false
+  eac: true
+  system_winetricks: true
+  version: system
+  vkd3d: false

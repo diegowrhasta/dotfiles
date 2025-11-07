@@ -1,0 +1,9 @@
+game:
+  exe: /home/diego-b/Documents/windows games/miboujin-nikki/miboujin-nikki/mibou.exe
+system:
+  locale: ja_JP.utf8
+wine:
+  dgvoodoo2: true
+  system_winetricks: true
+  version: system
+  vkd3d: false
