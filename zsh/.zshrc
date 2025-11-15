@@ -1,12 +1,9 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *{DENO_COMPLETIONS}* ]]; then export FPATH={DENO_FPATH}; fi
-
-# Autostart
-() {
-  setopt LOCAL_OPTIONS NO_MONITOR
-  fcitx5 -d &> /dev/null &
-  wait
-}
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Use powerline
 USE_POWERLINE="true"
@@ -23,44 +20,46 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Autostart
 
-# Load Angular CLI autocompletion.
-export DOTNET_ROOT=$HOME/.dotnet
+() {
+  setopt LOCAL_OPTIONS NO_MONITOR
+  fcitx5 -d &> /dev/null &
+  wait
+}
 
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+# Aliases
+alias lasf="ls -laF"
+
+# Function aliases
+raku() {
+  ~/Documents/scripts/maintenance.sh "$@"
+}
 
 # pnpm
-export PNPM_HOME={PNPM}
+export PNPM_HOME="/home/diego/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
-# Aliases
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias waifu={WAIFU}
-alias lasf="ls -laF"
-alias prx={PRX}
-alias lesgow={LESGOW}
-alias jpmu={JPMU}
-alias jpmuU={JPMUU}
+# Dotnet
 
-# Shell function aliases
-raku() {
-  {RAKU}
-}
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
-# bun completions
-[ -s {BUN} ] && source {BUN}
+# Export gems
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+
+# Export cargo bins (alacritty cargo install)
+
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Alacritty
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -68,19 +67,8 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Cool start
 fastfetch
 
-# Go Path
-
-export GOPATH="$HOME/go"
-
-# Deno Path
-export PATH="$GOPATH/bin:$PATH"
-{DENO}
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Status Bar Customization
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Go (mostly to make gopls work)
+export PATH=$PATH:~/go/bin

@@ -92,3 +92,15 @@ failing since it's not available to said user.
 
 For a rundown of what the configurations do, and the reason as to some of them,
 you can check-out my [linux-corner](https://linux-corner.dsbalderrama.top/).
+
+## Helix Editor
+
+_Since I dwell in Golang a bit, a bit of extra setup is needed to get it working
+with Helix with a proper LSP and formatter_. It's not that crazy though, just
+install the lsp server:
+
+- `go install golang.org/x/tools/gopls@latest`
+- Copy the `languages.toml` which essentially manually tells helix to use `gofmt`
+as a formatter for Go.
+- Don't forget to add the Go binaries to the path so that helix can recognize the
+lsp lives somewhere `EXPORT $PATH=$PATH:~/go/bin`
